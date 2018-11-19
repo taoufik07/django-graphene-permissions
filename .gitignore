@@ -1,0 +1,16 @@
+.vscode/
+.cache
+.idea
+.python-version
+.coverage
+.pytest_cache
+.DS_Store
+coverage.xml
+
+__pycache__
+tests/__pycache__
+
+build
+django_graphene_permissions.egg-info/
+dist/
+

@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+graphene = "*"
+graphene-django = "*"
+
+[dev-packages]
+twine = "*"
+
+[requires]
+python_version = "3.6"
