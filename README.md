@@ -9,6 +9,8 @@ Install the latest release:
 
 ```shell
 $ pip3 install django-graphene-permissions
+# or
+$ pipenv install django-graphene-permissions
 ```
 
 ## Usage
