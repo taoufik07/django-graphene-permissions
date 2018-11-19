@@ -1,11 +1,18 @@
+import os
+
 import setuptools
 
 with open("README.md", "r") as fh:
 	long_description = fh.read()
 
+about = {}
+
+with open(os.path.join("django_graphene_permissions", "__version__.py")) as f:
+    exec(f.read(), about)
+
 setuptools.setup(
 	name="django_graphene_permissions",
-	version="0.0.2",
+	version=about["__version__"],
 	author="Taoufik Abbassid",
 	author_email="abacidtaoufik@gmail.com",
 	description="DRF like permission system",

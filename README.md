@@ -9,13 +9,17 @@ Install the latest release:
 
 ```shell
 $ pip3 install django-graphene-permissions
-# or
+```
+Or using pipenv
+
+```shell
 $ pipenv install django-graphene-permissions
 ```
 
 ## Usage
 
 ### Permission definition
+---
 
 You can create new permissions by subclassing `BasePermission` e.g. 
 
@@ -42,6 +46,7 @@ This package provides predefined permissions :
 
 
 ### Node Permission
+---
 
 Subclass `PermissionDjangoObjectType` and define the permissions via the static method `permission_classes` which returns an iterable of permissions classes
 
@@ -61,6 +66,7 @@ class ExampleNode(PermissionDjangoObjectType):
 ```
 
 ### Mutation Permission
+---
 
 Apply the `permissions_checker([Permission,...])` decorator to `mutate` e.g.
 
@@ -82,6 +88,7 @@ class ExampleDeleteMutation(graphene.Mutation):
 ``` 
 
 ### Query Permission
+---
 
 Apply the `permissions_checker([Permission,...])` decorator to the field resolver e.g.
 
