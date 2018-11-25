@@ -9,6 +9,7 @@ graphene-django = "*"
 
 [dev-packages]
 twine = "*"
+black = "*"
 
 [requires]
 python_version = "3.6"

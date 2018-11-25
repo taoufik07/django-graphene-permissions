@@ -5,6 +5,7 @@ def permissions_checker(permissions, manually=False):
     """
     Checks the given permissions
     """
+
     def wrapped_decorator(func):
         def inner(cls, info, *args, **kwargs):
             if check_permissions(permissions, info.context):
@@ -20,8 +21,11 @@ def permissions_checker(permissions, manually=False):
                         raise PermissionDenied("Permission Denied.")
                 return func(cls, info, **kwargs)
             raise PermissionDenied("Permission Denied.")
+
         return inner
+
     return wrapped_decorator
+
 
 def check_permissions(permissions, context):
     """
@@ -32,6 +36,7 @@ def check_permissions(permissions, context):
         if not permission.has_permission(context):
             return False
     return True
+
 
 def check_object_permissions(permissions, context, obj):
     """

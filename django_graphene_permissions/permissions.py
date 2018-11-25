@@ -7,6 +7,7 @@ class PermissionDjangoObjectType(DjangoObjectType):
     """
     Check if the object    
     """
+
     class Meta:
         abstract = True
 
@@ -25,6 +26,7 @@ class BasePermission:
     """
     Base class from which all permission classes should inherit.
     """
+
     @staticmethod
     def has_permission(context):
         """
@@ -54,6 +56,7 @@ class IsAuthenticated(BasePermission):
     """
     Allows access only to authenticated users.
     """
+
     @staticmethod
     def has_permission(context):
         return context.user and context.user.is_authenticated
