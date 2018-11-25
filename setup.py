@@ -16,6 +16,7 @@ setuptools.setup(
 	author="Taoufik Abbassid",
 	author_email="abacidtaoufik@gmail.com",
 	description="DRF like permission system for django graphene",
+	license='BSD',
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	url="https://github.com/taoufik07/django-graphene-permissions",
