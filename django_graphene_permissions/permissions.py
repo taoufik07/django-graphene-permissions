@@ -1,3 +1,4 @@
+from django_graphene_permissions.operation_mixin import BasePermissionMetaclass
 from graphene_django import DjangoObjectType
 
 from .decorators import permissions_checker
@@ -22,7 +23,7 @@ class PermissionDjangoObjectType(DjangoObjectType):
         return []
 
 
-class BasePermission:
+class BasePermission(metaclass=BasePermissionMetaclass):
     """
     Base class from which all permission classes should inherit.
     """

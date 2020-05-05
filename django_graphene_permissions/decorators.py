@@ -1,4 +1,6 @@
-from .exceptions import GraphQLError, PermissionDenied
+from django_graphene_permissions.operation_mixin import OperandHolder
+
+from .exceptions import PermissionDenied
 
 
 def permissions_checker(permissions, manually=False):
@@ -33,9 +35,12 @@ def check_permissions(permissions, context):
     Raises an appropriate exception if it's is not permitted.
     """
     for permission in permissions:
-        if not permission.has_permission(context):
-            return False
-    return True
+        if isinstance(permission, OperandHolder):
+            return permission().has_permission(context)
+        else:
+            return permission.has_permission(context)
+
+    return False
 
 
 def check_object_permissions(permissions, context, obj):
